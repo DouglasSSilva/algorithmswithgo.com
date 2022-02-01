@@ -1,5 +1,7 @@
 package module01
 
+import "fmt"
+
 // DecToBase will return a string representing
 // the provided decimal number in the provided base.
 // This is limited to bases 2-16 for simplicity.
@@ -10,5 +12,14 @@ package module01
 //   DecToBase(14, 2) => "1110"
 //
 func DecToBase(dec, base int) string {
-	return ""
+	modString := []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"}
+	value := ""
+	for dec >= base {
+		mod := dec % base
+		value = fmt.Sprintf("%s%s", modString[mod], value)
+		dec = dec / base
+
+	}
+	value = fmt.Sprintf("%s%s", modString[dec], value)
+	return value
 }
