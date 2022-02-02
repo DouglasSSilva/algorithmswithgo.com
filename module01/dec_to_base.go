@@ -23,3 +23,9 @@ func DecToBase(dec, base int) string {
 	value = fmt.Sprintf("%s%s", modString[dec], value)
 	return value
 }
+
+// func decToBase2Bitwise(dec int) {
+// 	var base2 uint
+// 	base2 := dec << 31
+
+// }
