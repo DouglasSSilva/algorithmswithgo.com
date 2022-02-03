@@ -21,7 +21,8 @@ func BaseToDec(value string, base int) int {
 		numberAsString := string(value[valueSize-(i+1)])
 		position := findPosition(numberAsString)
 
-		total += position * math.Pow(float64(base), float64(i))
+		pow := math.Pow(float64(base), float64(i))
+		total += position * pow
 
 	}
 	return int(total)
