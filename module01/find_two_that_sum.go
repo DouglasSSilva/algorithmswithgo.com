@@ -35,5 +35,17 @@ package module01
 //    for the sum of 4.
 //
 func FindTwoThatSum(numbers []int, sum int) (int, int) {
-	return 0, 0
+
+	numbersLen := len(numbers)
+	for i := 0; i < numbersLen-1; i++ {
+		searchedVal := sum - numbers[i]
+
+		for k := i + 1; k < numbersLen; k++ {
+			if numbers[k] == searchedVal {
+				return i, k
+			}
+		}
+	}
+
+	return -1, -1
 }
